@@ -4,6 +4,7 @@ import Cabecalho from "./componetes/Cabecalho";
 import BarraLateral from "./componetes/BarraLateral";
 import Banner from "./componetes/Banner";
 import bannerBackgroud from "./assets/banner.png";
+import Galeria from "./componetes/Galeria";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -27,6 +28,12 @@ const MainContainer = styled.main`
   gap: 24px;
 `;
 
+const ConteudoGaleria = styled.section`
+  display: flex;
+  flex-direction: column; // Organiza os itens em coluna
+  flex-grow: 1; // Permite que a galeria ocupe o espaço restante
+`;
+
 function App() {
   return (
     <FundoGradiente>
@@ -35,10 +42,13 @@ function App() {
         <Cabecalho />
         <MainContainer>
           <BarraLateral />
-          <Banner
-            texto="A galeria mais completa de fotos do espaço!"
-            backgroundImage={bannerBackgroud}
-          />
+          <ConteudoGaleria>
+            <Banner
+              texto="A galeria mais completa de fotos do espaço!"
+              backgroundImage={bannerBackgroud}
+            />
+            <Galeria />
+          </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
     </FundoGradiente>
